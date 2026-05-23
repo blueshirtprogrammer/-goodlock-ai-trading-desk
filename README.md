@@ -90,6 +90,6 @@ In Question 3, choose Option A. Users can describe a strategy, provide a file pa
 ## Resources
 
 - Paperclip: https://paperclip.ng
-- Upstream repo to preserve until forked: https://github.com/jackson-video-resources/paperclip-zero-human-trading-firm
+- Goodlock AI Trading Desk repo: https://github.com/blueshirtprogrammer/-goodlock-ai-trading-desk
 - TradingView MCP to preserve until forked: https://github.com/LewisWJackson/tradingview-mcp-jackson
 - Claude Code: https://claude.ai/download

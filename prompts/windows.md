@@ -14,7 +14,7 @@ Start by running:
 ```bash
 node -e "console.log(process.platform)"
 ```
-If output is not `win32`: say "This is the Windows version. Grab the Mac or Linux version from https://github.com/jackson-video-resources/paperclip-zero-human-trading-firm" and stop. If `win32`: say "Windows confirmed. Let's build your firm." and proceed.
+If output is not `win32`: say "This is the Windows version. Grab the Mac or Linux version from https://github.com/blueshirtprogrammer/-goodlock-ai-trading-desk" and stop. If `win32`: say "Windows confirmed. Let's build your firm." and proceed.
 
 ---
 
