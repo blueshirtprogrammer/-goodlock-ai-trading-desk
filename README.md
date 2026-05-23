@@ -1,123 +1,95 @@
-# Paperclip Zero Human Trading Firm
+# Goodlock AI Trading Desk
 
-One-shot prompt to build a fully autonomous AI trading firm with Paperclip + Claude Code + TradingView MCP. Free, no coding required. Runs on your existing Claude Code subscription.
+![Goodlock AI Trading Desk mark](assets/goodlock-mark.svg)
 
-**Watch the video:** [VIDEO LINK — add after filming]
+One prompt that launches a human-approved AI trading operations desk with Paperclip, Claude Code, and the TradingView MCP. It is built for research, backtesting, risk review, paper execution, audit logs, and explicit human approval before live capital is touched.
 
----
+This fork-ready version is branded for Josh Goodlock. The original upstream GitHub links are intentionally preserved until the repo and TradingView MCP are forked under Josh's account.
 
-## What This Is
-
-A single prompt you paste into Claude Code. It interviews you, installs everything, creates your trading firm org, hires six specialist agents with pre-loaded roles and responsibilities, and opens your Paperclip dashboard — all in one session.
-
-**What you get:**
-- **CEO** — your direct report. Manages the team, delegates tasks, runs weekly board briefings.
-- **Research Agent** — scans YouTube, arXiv, TradingView ideas, and Reddit every night. Weekly strategy brief.
-- **Backtest Agent** — tests every idea, logs every result forever (institutional memory). Uses TradingView MCP for historical data.
-- **Risk Management Agent** — the gatekeeper. No strategy moves to live trading without its sign-off and your approval.
-- **Execution Agent** — places trades when the Risk Agent clears a strategy. Paper trading by default. You flip the live switch.
-- **Cost Optimizer** — monitors token usage weekly. Finds and fixes token bloat across the firm.
-
-Plus: TradingView MCP connected, full file structure created, risk thresholds configured to your tolerance.
-
----
-
-## Pick Your Platform
+## Start Here
 
 | Platform | Prompt |
-|----------|--------|
-| Mac | [prompts/mac.md](prompts/mac.md) |
+| --- | --- |
 | Windows | [prompts/windows.md](prompts/windows.md) |
+| Mac | [prompts/mac.md](prompts/mac.md) |
 | Linux | [prompts/linux.md](prompts/linux.md) |
 
-Open the file for your OS, copy everything below the horizontal rule, paste into Claude Code, hit Enter.
+For Windows, open [prompts/windows.md](prompts/windows.md), copy everything below the first horizontal rule, paste it into Claude Code, and hit Enter.
 
----
+For a more polished install experience, open [onboarding/index.html](onboarding/index.html) in your browser. It gives users a professional onboarding flow, setup checklist, risk-gate explanation, and direct links to the platform prompts.
 
-## What the Onboarding Agent Does
+## What It Builds
 
-**Phase 1 — Environment check:** Confirms macOS/Windows/Linux, checks Node.js and Git, opens download pages and waits if anything is missing.
+Goodlock AI Trading Desk creates a Paperclip organization with six specialist agents:
 
-**Phase 2 — Intake interview (5 questions):**
-1. What do you want to name your trading firm?
-2. What are the goals of the firm?
-3. Do you have an existing strategy, or are you building one?
-4. Lewis's 6-agent setup, or do you want to customise?
-5. What's your risk tolerance? (sets the Risk Management Agent's hard floor)
+- **CEO** - your direct report. Triage, delegation, board briefings, and escalation.
+- **Research Agent** - scans YouTube, arXiv, TradingView ideas, and Reddit for strategy candidates.
+- **Backtest Agent** - validates every idea and stores permanent institutional memory.
+- **Risk Management Agent** - blocks strategies that fail the agreed risk floor.
+- **Execution Agent** - paper-trades by default and only moves live when the Board explicitly approves.
+- **Cost Optimizer** - reviews token usage and trims waste without weakening safety-critical work.
 
-**Phase 3 — Install Paperclip:** Runs `npx paperclip@latest`, creates your org, handles errors automatically.
+The installer also creates the firm directory, configures risk thresholds, connects the TradingView MCP, stores agent IDs, and opens the Paperclip dashboard.
 
-**Phase 4 — File structure:** Creates `~/[your-firm]/` with folders for agents, strategies, logs, institutional memory, and config.
+## Why This Is Commercially Useful
 
-**Phase 5 — TradingView MCP:** Checks for TradingView Desktop, clones and installs the MCP server, adds it to your Claude Code config without touching existing MCP servers.
+This should be positioned as an AI trading operations kit, not a signal-selling product.
 
-**Phase 6 — Hire the team:** Sends the CEO a full brief with your firm's goals, strategy context, risk thresholds, and complete mandates for all six agents embedded. CEO hires the team while you watch.
+- **Free repo** - public trust, adoption, and community contribution.
+- **Paid setup pack** - premium prompts, templates, risk policies, example strategies, and troubleshooting guides.
+- **Pro version** - richer reporting, more agent templates, broker-paper integrations, and strategy lifecycle workflows.
+- **Done-with-you install** - high-ticket setup for traders, educators, and small quant teams.
+- **Enterprise desk** - audit trails, multi-user approvals, compliance logs, and custom governance.
 
-**Phase 7 — Open Paperclip:** Auto-opens your Paperclip workspace so you can see the org chart populating live.
+The clean positioning:
 
-**Phase 8 — Confirmation:** Prints your firm summary, what each agent is doing right now, and what to do next.
-
----
-
-## What You'll Be Able to Do After Setup
-
-- Give your CEO its first task immediately — no further config needed
-- See your Research Agent start scanning tonight and deliver a strategy brief within 7 days
-- Understand what each agent does, who it reports to, and what its hard rules are
-- Activate live trading with one instruction to the CEO when a strategy clears all risk checks
-
----
+> An AI trading operations desk that researches, backtests, risk-checks, and paper-trades strategies before a human approves live capital.
 
 ## Requirements
 
-- **Claude Code** — already running (you're reading this, or about to paste it in)
-- **Node.js** — the prompt checks and opens the download page if missing
-- **Git** — the prompt checks and installs/links if missing
-- **TradingView Desktop** — required for TradingView MCP (paid TradingView subscription). The prompt checks and opens the download page if missing.
-- A **Claude Code subscription** — no extra cost for Paperclip (MIT license, free)
+- Claude Code running locally.
+- Node.js.
+- Git for your operating system.
+- TradingView Desktop for the TradingView MCP.
+- A Claude Code subscription.
+- A paid TradingView plan if your workflow requires the desktop MCP features.
 
----
+## Onboarding Flow
+
+The prompt walks the user through:
+
+1. OS and tool checks.
+2. Five-question desk intake.
+3. Anthropic API key setup.
+4. Paperclip install and organization creation.
+5. Firm directory creation.
+6. TradingView MCP install.
+7. Agent creation through the Paperclip API.
+8. Dashboard launch.
+9. Verification and first CEO task.
+
+## Guardrails
+
+- Paper trading is the default.
+- Live trading requires explicit Board approval.
+- Risk thresholds live in `config/risk-thresholds.json`.
+- Only the human Board can change risk thresholds.
+- The Risk Management Agent and Execution Agent are kept separate.
+- Every strategy must pass backtesting and paper-trading review before live execution.
 
 ## Custom Teams
 
-During the intake interview, the onboarding agent will ask if you want Lewis's 6-agent setup or a custom team. If you go custom, it will ask you for each role's name, reporting line, and mandate — then embed them in the CEO brief. You can spin up as many agents as you want.
+During the intake interview, the onboarding agent asks whether to use Josh Goodlock's six-agent setup or a custom team. Custom roles include role name, reporting line, and mandate, then get embedded into the CEO's delegation brief.
 
-**A note on cost:** More agents = more token usage. The Cost Optimizer agent will surface this. If you want to go beyond 6, the onboarding agent will flag the likely cost implications before proceeding.
+More agents mean more token usage, so the Cost Optimizer is included to surface operational cost and prompt bloat.
 
----
+## Bring Your Own Strategy
 
-## Bringing Your Own Strategy
-
-In Question 3, choose Option A. You can:
-- Describe your strategy in plain language — the onboarding agent will encode it into the CEO and Research briefs
-- Paste a strategy document or rules file path — the onboarding agent will read it
-- Upload a PDF or text file to Claude Code — the onboarding agent will extract the relevant rules
-
-The strategy context flows into every agent's mandate: the Research Agent looks for complementary ideas, the Backtest Agent tests it first, the Risk Agent validates against your parameters.
-
----
-
-## To Activate Live Trading
-
-After setup, when a strategy has cleared the Backtest Agent and passed 30 days of paper trading, tell your CEO:
-
-> "Activate live money trading."
-
-The CEO will confirm which strategy is being cleared, ask you to confirm, and the Execution Agent switches modes. That is the only gate between your firm and real money.
-
----
-
-## Three Rules
-
-1. Never give any agent access to the service that enforces its own risk limits.
-2. Your risk thresholds file (`~/[your-firm]/config/risk-thresholds.json`) is the law. Only you change it.
-3. If something feels off — stop. Don't fix it by lowering your thresholds. Fix the strategy.
-
----
+In Question 3, choose Option A. Users can describe a strategy, provide a file path, or upload a strategy document. The onboarding agent embeds that context into the CEO, Research, Backtest, and Risk Management workflows.
 
 ## Resources
 
 - Paperclip: https://paperclip.ng
-- TradingView MCP: https://github.com/LewisWJackson/tradingview-mcp-jackson
+- Upstream repo to preserve until forked: https://github.com/jackson-video-resources/paperclip-zero-human-trading-firm
+- TradingView MCP to preserve until forked: https://github.com/LewisWJackson/tradingview-mcp-jackson
 - Claude Code: https://claude.ai/download
-- Video: [VIDEO LINK — add after filming]

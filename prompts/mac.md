@@ -1,4 +1,4 @@
-# Zero Human Trading Firm — Mac Setup
+# Goodlock AI Trading Desk — Mac Setup
 
 Paste everything below the horizontal rule into Claude Code and hit Enter.
 
@@ -6,9 +6,9 @@ Paste everything below the horizontal rule into Claude Code and hit Enter.
 
 ---
 
-You are an onboarding agent building a fully autonomous AI trading firm. You act — you never instruct. You open things. You install things. You take the person through setup while they watch.
+You are an onboarding agent building a human-approved AI trading desk. You act — you never instruct. You open things. You install things. You take the person through setup while they watch.
 
-The end result: the person talks to the CEO in Paperclip, the CEO delegates automatically to specialists, the specialists run and report back. No human involvement beyond the initial conversation with the CEO.
+The end result: the person talks to the CEO in Paperclip, the CEO delegates automatically to specialists, the specialists run and report back. The desk runs research, backtesting, risk review, and paper execution autonomously; live money remains gated by explicit Board approval.
 
 Start by running `uname -s`. If output is not `Darwin`: say "This is the Mac version. Grab the Linux or Windows version from https://github.com/jackson-video-resources/paperclip-zero-human-trading-firm" and stop. If `Darwin`: say "macOS confirmed. Let's build your firm." and proceed.
 
@@ -40,9 +40,9 @@ Ask one at a time. Wait. Store all answers.
 
 **Q1 — Firm name** (becomes the Paperclip org name)
 **Q2 — Goals** (e.g. grow capital, generate income, test a strategy)
-**Q3 — Strategy**: A) I have one — describe it or give a file path  B) Building from scratch  C) Copy Lewis's setup
-**Q4 — Team**: A) Lewis's 6-agent setup  B) Custom (ask: role, reports to, mandate for each)
-**Q5 — Risk tolerance**: A) Conservative (Sharpe >2.0, drawdown <10%)  B) Moderate (Sharpe >1.5, drawdown <15%) — Lewis's default  C) Aggressive (Sharpe >1.0, drawdown <25%)  D) Custom
+**Q3 — Strategy**: A) I have one — describe it or give a file path  B) Building from scratch  C) Copy Josh Goodlock's setup
+**Q4 — Team**: A) Josh Goodlock's 6-agent setup  B) Custom (ask: role, reports to, mandate for each)
+**Q5 — Risk tolerance**: A) Conservative (Sharpe >2.0, drawdown <10%)  B) Moderate (Sharpe >1.5, drawdown <15%) — Josh Goodlock's default  C) Aggressive (Sharpe >1.0, drawdown <25%)  D) Custom
 
 When done: "Got it. Building now."
 
@@ -121,7 +121,7 @@ Check:
 ls /Applications/TradingView.app 2>/dev/null && echo "found" || echo "not found"
 ```
 
-If not found: `open https://www.tradingview.com/pricing/?share_your_love=lewisf5rg0` — wait for confirmation.
+If not found: `open https://www.tradingview.com/pricing/` — wait for confirmation.
 
 ```bash
 git clone https://github.com/LewisWJackson/tradingview-mcp-jackson.git ~/tradingview-mcp-jackson
@@ -648,3 +648,4 @@ You never need to assign tasks to specialists directly.
 1. Never give any agent access to the system that enforces its own risk limits.
 2. `~/[FIRM_SLUG]/config/risk-thresholds.json` is the law. Only you change it.
 3. If something feels off — stop. Fix the strategy, not the thresholds.
+

@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Goodlock AI Trading Desk Onboarding</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07111f;
+      --panel: #0d1b2d;
+      --panel-2: #10263a;
+      --line: #24445f;
+      --text: #eef7f4;
+      --muted: #a8bbb6;
+      --teal: #2dd4bf;
+      --gold: #f6b73c;
+      --green: #84cc16;
+      --red: #fb7185;
+      --shadow: 0 18px 70px rgba(0, 0, 0, 0.38);
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(45, 212, 191, 0.18), transparent 32rem),
+        radial-gradient(circle at 82% 0%, rgba(246, 183, 60, 0.15), transparent 28rem),
+        linear-gradient(135deg, #07111f 0%, #0a1728 52%, #0c211f 100%);
+      color: var(--text);
+    }
+
+    a { color: inherit; }
+
+    .shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 10px 0 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      box-shadow: 0 12px 34px rgba(45, 212, 191, 0.22);
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: 0;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-top: 2px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 40px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(13, 27, 45, 0.82);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    .button.primary {
+      border-color: rgba(246, 183, 60, 0.7);
+      background: linear-gradient(135deg, #f6b73c, #2dd4bf);
+      color: #07111f;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(340px, 0.98fr);
+      gap: 28px;
+      align-items: stretch;
+      min-height: 520px;
+      padding: 18px 0 32px;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 24px 0;
+      min-width: 0;
+    }
+
+    .eyebrow {
+      color: var(--teal);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(3rem, 8vw, 5.9rem);
+      line-height: 0.92;
+      letter-spacing: 0;
+      overflow-wrap: break-word;
+    }
+
+    .lead {
+      max-width: 690px;
+      margin: 24px 0 0;
+      color: #d7e7e2;
+      font-size: clamp(1.02rem, 2vw, 1.28rem);
+      line-height: 1.6;
+      overflow-wrap: break-word;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .console {
+      align-self: center;
+      border: 1px solid rgba(132, 204, 22, 0.22);
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(5, 12, 22, 0.86);
+      box-shadow: var(--shadow);
+    }
+
+    .console-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 46px;
+      padding: 0 16px;
+      background: rgba(16, 38, 58, 0.94);
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .console-top span {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .lights {
+      display: flex;
+      gap: 7px;
+    }
+
+    .lights i {
+      display: block;
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: var(--line);
+    }
+
+    .lights i:nth-child(1) { background: var(--red); }
+    .lights i:nth-child(2) { background: var(--gold); }
+    .lights i:nth-child(3) { background: var(--green); }
+
+    .console-body {
+      padding: 22px;
+      font-family: "Cascadia Code", Consolas, monospace;
+      font-size: 0.92rem;
+      line-height: 1.72;
+      color: #c9f5e8;
+      overflow-wrap: anywhere;
+    }
+
+    .prompt { color: var(--gold); }
+    .ok { color: var(--green); }
+    .dim { color: #8ca5a0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(13, 27, 45, 0.78);
+      padding: 18px;
+      min-height: 162px;
+    }
+
+    .card h2,
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.04rem;
+      letter-spacing: 0;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.55;
+    }
+
+    .card p { margin: 0; }
+    ul { margin: 0; padding-left: 18px; }
+
+    .section {
+      padding: 38px 0 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      counter-reset: step;
+    }
+
+    .step {
+      counter-increment: step;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: rgba(7, 17, 31, 0.68);
+      min-height: 132px;
+    }
+
+    .step::before {
+      content: counter(step);
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(45, 212, 191, 0.16);
+      color: var(--teal);
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .step span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .warning {
+      margin-top: 18px;
+      border: 1px solid rgba(246, 183, 60, 0.36);
+      border-radius: 8px;
+      background: rgba(246, 183, 60, 0.09);
+      padding: 16px 18px;
+      color: #ffe7b0;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 920px) {
+      header,
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero,
+      .grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .console {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .shell {
+        width: 306px;
+        max-width: calc(100vw - 32px);
+        padding-top: 22px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        line-height: 1;
+      }
+
+      .lead {
+        max-width: 100%;
+        font-size: 1rem;
+      }
+
+      .button {
+        min-height: 40px;
+        padding: 0 12px;
+        font-size: 0.88rem;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .console-top,
+      .console-body {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .console-body {
+        font-size: 0.84rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <a class="brand" href="../README.md">
+        <img src="../assets/goodlock-mark.svg" alt="Goodlock AI Trading Desk mark">
+        <span>
+          <strong>Goodlock AI Trading Desk</strong>
+          <span>Paperclip + Claude Code + TradingView MCP</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a class="button" href="../prompts/mac.md">Mac</a>
+        <a class="button primary" href="../prompts/windows.md">Windows</a>
+        <a class="button" href="../prompts/linux.md">Linux</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Windows-first onboarding</div>
+        <h1>Launch an AI trading desk with a real risk gate.</h1>
+        <p class="lead">
+          Paste one prompt into Claude Code. It installs Paperclip, builds the firm workspace,
+          hires specialist agents, connects TradingView MCP, and keeps live capital behind
+          explicit human approval.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="../prompts/windows.md">Open Windows prompt</a>
+          <a class="button" href="../README.md">Read the repo guide</a>
+        </div>
+      </div>
+
+      <aside class="console" aria-label="Onboarding preview">
+        <div class="console-top">
+          <div class="lights" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span>goodlock-desk://onboarding</span>
+        </div>
+        <div class="console-body">
+          <div><span class="prompt">&gt;</span> Windows confirmed. Building your firm.</div>
+          <div><span class="ok">OK</span> Node.js / Git / Claude Code</div>
+          <div><span class="ok">OK</span> Paperclip organization created</div>
+          <div><span class="ok">OK</span> Six specialist agents hired</div>
+          <div><span class="ok">OK</span> Risk thresholds locked</div>
+          <div><span class="dim">MODE</span> Paper trading by default</div>
+          <div><span class="dim">GATE</span> Live capital requires Board approval</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid" aria-label="Desk capabilities">
+      <article class="card">
+        <h2>Research</h2>
+        <p>Scans public strategy sources, scores ideas, and writes a weekly institutional brief.</p>
+      </article>
+      <article class="card">
+        <h2>Validation</h2>
+        <p>Backtests candidates, stores every result, and keeps strategy memory intact.</p>
+      </article>
+      <article class="card">
+        <h2>Governance</h2>
+        <p>Separates risk review from execution so no agent can lower its own guardrails.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>The install path</h2>
+        <p>The onboarding prompt handles the operational setup, then hands you a CEO agent that delegates the work.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><strong>Check</strong><span>Confirm Windows, Node.js, Git, and Claude Code.</span></div>
+        <div class="step"><strong>Interview</strong><span>Capture firm name, goals, strategy, team, and risk tolerance.</span></div>
+        <div class="step"><strong>Build</strong><span>Create the Paperclip org, directories, secrets, and MCP config.</span></div>
+        <div class="step"><strong>Launch</strong><span>Open the dashboard, verify agents, and assign the CEO's first task.</span></div>
+      </div>
+      <div class="warning">
+        This is not financial advice and it does not promise returns. The desk is designed for operational automation, research, paper trading, and controlled human approval workflows.
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Goodlock AI Trading Desk mark</title>
+  <desc id="desc">A shield, chart line, and node system mark for the Goodlock AI Trading Desk.</desc>
+  <defs>
+    <linearGradient id="shield" x1="40" x2="216" y1="24" y2="232" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="0.5" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="line" x1="66" x2="194" y1="166" y2="88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a7f3d0"/>
+      <stop offset="1" stop-color="#fde68a"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="#07111f"/>
+  <path d="M128 28l78 30v62c0 51-31 87-78 108-47-21-78-57-78-108V58l78-30z" fill="url(#shield)"/>
+  <path d="M76 161l32-34 28 23 44-58" fill="none" stroke="url(#line)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="76" cy="161" r="12" fill="#ecfeff"/>
+  <circle cx="108" cy="127" r="12" fill="#ecfeff"/>
+  <circle cx="136" cy="150" r="12" fill="#ecfeff"/>
+  <circle cx="180" cy="92" r="12" fill="#ecfeff"/>
+  <path d="M80 74h96M80 198h96" stroke="#ecfeff" stroke-width="8" stroke-linecap="round" opacity="0.55"/>
+</svg>
